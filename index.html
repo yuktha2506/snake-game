@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Snake Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Header & Scoreboard -->
+    <header class="game-header">
+      <div class="title-row">
+        <h1 class="game-title">CYBER<span class="highlight">SNAKE</span></h1>
+        <button id="sound-toggle" class="icon-btn" title="Toggle Sound" aria-label="Toggle Sound">
+          <span id="sound-icon">🔊</span>
+        </button>
+      </div>
+
+      <div class="scoreboard">
+        <div class="score-card">
+          <span class="label">SCORE</span>
+          <span id="current-score" class="value">0</span>
+        </div>
+        <div class="score-card highlight-card">
+          <span class="label">HIGH SCORE</span>
+          <span id="high-score" class="value">0</span>
+        </div>
+        <div class="score-card">
+          <span class="label">LENGTH</span>
+          <span id="snake-length" class="value">3</span>
+        </div>
+      </div>
+
+      <!-- Settings / Mode Bar -->
+      <div class="controls-bar">
+        <div class="difficulty-group">
+          <span class="diff-label">Speed:</span>
+          <button class="diff-btn" data-speed="easy">Easy</button>
+          <button class="diff-btn active" data-speed="normal">Normal</button>
+          <button class="diff-btn" data-speed="hard">Hard</button>
+        </div>
+        <button id="pause-btn" class="action-btn">Pause</button>
+      </div>
+    </header>
+
+    <!-- Canvas Wrapper -->
+    <div class="canvas-wrapper">
+      <canvas id="game-canvas" width="440" height="440"></canvas>
+
+      <!-- Overlay (Start / Pause / Game Over) -->
+      <div id="game-overlay" class="overlay">
+        <div class="overlay-content">
+          <h2 id="overlay-title" class="overlay-title">READY TO PLAY?</h2>
+          <p id="overlay-subtitle" class="overlay-subtitle">Press <kbd>Space</kbd> or click Start</p>
+          <div id="final-stats" class="final-stats hidden">
+            <p>Score: <span id="final-score">0</span></p>
+            <p id="new-high-score-banner" class="new-high-score hidden">🏆 NEW BEST RECORD! 🏆</p>
+          </div>
+          <button id="start-btn" class="primary-btn">START GAME</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- On-screen D-Pad Controls (Great for touch/mobile or mouse) -->
+    <div class="dpad-container">
+      <div class="dpad-row">
+        <button class="dpad-btn" id="dpad-up" aria-label="Move Up">▲</button>
+      </div>
+      <div class="dpad-row">
+        <button class="dpad-btn" id="dpad-left" aria-label="Move Left">◀</button>
+        <div class="dpad-center"></div>
+        <button class="dpad-btn" id="dpad-right" aria-label="Move Right">▶</button>
+      </div>
+      <div class="dpad-row">
+        <button class="dpad-btn" id="dpad-down" aria-label="Move Down">▼</button>
+      </div>
+    </div>
+
+    <!-- Legend / Keyboard shortcut guide -->
+    <footer class="game-footer">
+      <p class="legend">
+        Move: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> &nbsp;|&nbsp;
+        Pause: <kbd>Space</kbd> &nbsp;|&nbsp; Restart: <kbd>R</kbd>
+      </p>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
