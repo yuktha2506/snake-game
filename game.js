@@ -1,8 +1,3 @@
-/**
- * Cyber Snake Arcade - game.js
- * Pure vanilla JavaScript implementation with HTML5 Canvas & Web Audio API
- */
-
 (function () {
   'use strict';
 
